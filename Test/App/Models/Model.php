@@ -39,9 +39,9 @@
                 Self::$dbConn = new PDO($Dsn, Self::$dbUser, Self::$dbPass, $options);
             } catch(Exception $e) {
                 $Response = array(
-                    status => 500,
-                    data => [],
-                    message => $e->getMessage()
+                    'status' => 500,
+                    'data' => [],
+                    'message' => $e->getMessage()
                 );
                 return $Response;
             }
@@ -67,7 +67,7 @@
          * Binds the prepared statement using the bindValue method.
          *
          * @param mixed $param, $value, $type  The parameter to bind the value to and the data type which is by default null.
-         * @return void Anonymos
+         * @return void Anonymous
          */
         protected static function bindParams($param, $value, $type = null)
         {
@@ -98,7 +98,7 @@
          * Executes the Sql statement and returns a boolean status
          *
          * @param void
-         * @return boolean Anonymos
+         * @return boolean Anonymous
          */
         protected static function execute()
         {
@@ -112,7 +112,7 @@
          * Executes the Sql statement and returns a single array from the resulting Sql query.
          *
          * @param void
-         * @return array Anonymos
+         * @return array Anonymous
          */
         protected static function fetch()
         {
@@ -126,7 +126,7 @@
          * Executes the Sql statement and returns an array from the resulting Sql query.
          *
          * @param void
-         * @return array Anonymos
+         * @return array Anonymous
          */
         protected static function fetchAll()
         {
@@ -140,7 +140,7 @@
          * Makes use of the database connection and returns the last inserted id in the database.
          *
          * @param void
-         * @return int Anonymos
+         * @return int Anonymous
          */
         protected static function lastInsertedId()
         {
